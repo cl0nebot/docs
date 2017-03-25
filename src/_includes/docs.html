@@ -1,0 +1,48 @@
+    <!-- ******DOCS****** -->
+    <section id="docs" class="docs section">
+        <div class="container">
+            <div class="docs-inner">
+            <h2 class="title text-center">Get Started</h2>
+            <div class="block">
+                <h4 class="sub-title text-center">Initialization</h4>
+                <br>
+                <p>Within a script tag, either in the header, or before the closing body tag:</p>
+                <div class="code-block">
+                    <pre><code class="language-javascript">
+  (function() {
+    var e = document.createElement('script');
+    e.src = 'https://cdn.rawgit.com/nicksoto/engagement/3e3a6705/dist/engage.min.js';
+    e.type = 'text/javascript';
+    e.async = 'true';
+    e.onload = e.onreadystatechange = function() {
+      var rs = this.readyState;
+      if (rs && rs != 'complete' && rs != 'loaded') return;
+      try { engage.run(engageConfig) } catch (e) {}
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(e, s);
+  })();
+                     </code></pre>
+                </div><!--//code-block-->
+            </div><!--//block-->
+            <div class="block">
+                <h4 class="sub-title text-center">Configuration</h4>
+                <br>
+                <p>Engage requires two parameters: an API Key (generated from the Engagement dashboard) and an element. The element is the CSS class name of the content you are targeting. Place the following somewhere in your code:</p>
+                <div class="code-block">
+                    <pre><code class="language-javascript">
+  engageConfig = {
+    element: '.text_content',  // the text that you are targeting
+    api_key: 'YOUR_API_KEY',   // Your unique API key from the Engagement dashboard
+  };
+                    </pre></code>
+                </div>
+                <br>
+                <p class="text-center">
+                    <a class="btn btn-cta-primary" href="https://github.com/getengage/engagement-backend" target="_blank">More on GitHub</a>
+                </p>
+            </div><!--//block-->
+
+            </div><!--//docs-inner-->
+        </div><!--//container-->
+    </section><!--//docs->
